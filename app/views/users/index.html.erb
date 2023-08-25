@@ -1,1 +1,21 @@
-
+<div class="col-md-8 offset-md-1">
+ <h2>User</h>
+ <table class="table">
+  <thead>
+    <tr>
+      <tr>image</tr>
+      <tr>name</tr>
+      <tr colspan="3"></tr>
+    </tr>
+  </thead>
+  <tbody>
+    <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= image_tag book.user.get_image %>
+      </td>
+      <% end %>
+    </tr>
+  </tbody>
+ </table>
+</div>
