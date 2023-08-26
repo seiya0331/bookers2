@@ -1,18 +1,25 @@
+<%= render 'books/list', book: @book, user: @user %>
 <div class="col-md-8 offset-md-1">
- <h2>User</h>
+ <h2>Users</h>
  <table class="table">
   <thead>
     <tr>
-      <tr>image</tr>
-      <tr>name</tr>
-      <tr colspan="3"></tr>
+      <th>image</th>
+      <th>name</th>
+      <th colspan="3"></th>
     </tr>
   </thead>
   <tbody>
     <% @users.each do |user| %>
     <tr>
       <td>
-        <%= image_tag book.user.get_image %>
+        <%= image_tag user.get_image %>
+      </td>
+      <td>
+        <%= user.name %>
+      </td>
+      <td>
+        <%= link_to "Show", user_path(user.id) %>
       </td>
       <% end %>
     </tr>
