@@ -6,6 +6,10 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
          has_many :books, dependent: :destroy
          has_one_attached :image
+         validates :name, presence: true, length: { in: 2..20 }
+         validates :introduction, presence: true, length: { maximum: 50 }, allow_blank: true
+         
+         
 
   def get_image
     unless image.attached?
